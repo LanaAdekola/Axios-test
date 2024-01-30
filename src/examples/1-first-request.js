@@ -3,9 +3,18 @@ import axios from 'axios'
 // limit, if 429 wait for 15 min and try again
 const url = 'https://course-api.com/react-store-products';
 
+const fetchData = async () => {
+  try {
+    const response = await axios(url)
+    const data = response.data
+    console.log(data)
+    } catch(error) {
+      console.log(error.response)
+    }
+}
 const FirstRequest = () => {
   useEffect(() => {
-    console.log('first axios request');
+    fetchData(); 
   }, []);
 
   return <h2 className='text-center'>first request</h2>;
