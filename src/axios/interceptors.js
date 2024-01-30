@@ -25,7 +25,7 @@ authFetch.interceptors.response.use(
         if(error.response.status === 404){
         console.log('NOT FOUND')
         }
-        return Promise.reject
+        return Promise.reject(error)
     });
 
 export default authFetch
