@@ -15,6 +15,7 @@ authFetch.interceptors.request.use((
     return Promise.reject(error)
 })
 
+
 authFetch.interceptors.response.use(
     (response) => {
     console.log('got response');
